@@ -25,6 +25,13 @@ The dbt models are designed to support inventory optimization efforts. Handled u
 
 TBD
 
+## Tools
+
+This project uses
+
+- dbt-bigquery (for transformations)
+- jupyter, pandas, matplotlib (for EDA)
+
 ## dbt Structure
 
 This project will follow standard dbt best practices:
