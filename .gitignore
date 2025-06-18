@@ -1,5 +1,14 @@
 .venv/
 .vscode/
+<<<<<<< HEAD
 target/
 dbt_packages/
 logs/
+etc/secret-volume/
+=======
+src/target/
+src/dbt_packages/
+src/logs/
+secrets/
+.env
+>>>>>>> 75426a9... ..:
