@@ -1,0 +1,8 @@
+# Packages for EDA
+notebook
+matplotlib
+pandas
+seaborn
+
+# Packages for modeling
+dbt-bigquery
