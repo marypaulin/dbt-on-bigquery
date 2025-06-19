@@ -113,6 +113,7 @@ google-api-core[grpc]==2.25.1
     #   dbt-bigquery
     #   google-cloud-aiplatform
     #   google-cloud-bigquery
+    #   google-cloud-bigquery-storage
     #   google-cloud-core
     #   google-cloud-dataproc
     #   google-cloud-resource-manager
@@ -124,6 +125,7 @@ google-auth==2.40.3
     #   google-auth-oauthlib
     #   google-cloud-aiplatform
     #   google-cloud-bigquery
+    #   google-cloud-bigquery-storage
     #   google-cloud-core
     #   google-cloud-dataproc
     #   google-cloud-resource-manager
@@ -141,6 +143,8 @@ google-cloud-bigquery[pandas]==3.34.0
     #   dbt-bigquery
     #   google-cloud-aiplatform
     #   pandas-gbq
+google-cloud-bigquery-storage==2.32.0
+    # via -r requirements.in
 google-cloud-core==2.4.3
     # via
     #   google-cloud-bigquery
@@ -372,6 +376,7 @@ proto-plus==1.26.1
     # via
     #   google-api-core
     #   google-cloud-aiplatform
+    #   google-cloud-bigquery-storage
     #   google-cloud-dataproc
     #   google-cloud-resource-manager
 protobuf==5.29.5
@@ -382,6 +387,7 @@ protobuf==5.29.5
     #   dbt-protos
     #   google-api-core
     #   google-cloud-aiplatform
+    #   google-cloud-bigquery-storage
     #   google-cloud-dataproc
     #   google-cloud-resource-manager
     #   googleapis-common-protos
@@ -431,6 +437,8 @@ python-dateutil==2.9.0.post0
     #   jupyter-client
     #   matplotlib
     #   pandas
+python-dotenv==1.1.0
+    # via -r requirements.in
 python-json-logger==3.3.0
     # via jupyter-events
 python-slugify==8.0.4
