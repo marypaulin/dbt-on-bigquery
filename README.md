@@ -10,14 +10,16 @@ It aims to be part of a larger ELT pipeline and focuses exclusively on the **tra
 
 This project uses the synthetic **theLook eCommerce** dataset, publicly available in Google BigQuery. It includes sales, customer, and inventory data. Key tables are:
 
-- `orders`: Sales transactions, including dates, order value, and profit  
-- `order_items`: Line items for each order, includes quantity and product linkage  
-- `products`: Product catalog with category, brand, and price info  
-- `users`: Customer demographic info (gender, age, location)  
-- `distribution_centers`: Info on where products are shipped from  
-- `inventory_items`: Inventory status per product per location  
+- `orders`: Sales transactions, including dates, order value, and profit
+- `order_items`: Line items for each order, includes quantity and product linkage
+- `products`: Product catalog with category, brand, and price info
+- `users`: Customer demographic info (gender, age, location)
+- `distribution_centers`: Info on where products are shipped from
+- `inventory_items`: Inventory status per product per location
 
-These serve as the raw sources for dbt transformations.
+These serve as the raw sources for dbt transformations. The Entity Relationship Diagram (ERD) for this dataset looks as follows (listing fewer columns for readability):
+
+![ERD Diagram](data/theLook_eCommerce_ERD_red.png)
 
 ## Use Cases
 
