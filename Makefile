@@ -31,3 +31,15 @@ clean:
 # Recreate the environment from scratch using requirements.txt
 rebuild: clean create sync
 
+# Extract raw data from BigQuery for local development
+extract:
+	$(PYTHON) data/extract_data.py
+
+# Generate profile reports for each table in the dataset
+profiles:
+	$(PYTHON) data/create_profiles.py
+
+# Open profile reports in browser
+open-profiles:
+	firefox $(shell find data/profiles/ -name "*.html")
+

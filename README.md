@@ -19,7 +19,7 @@ This project uses the synthetic **theLook eCommerce** dataset, publicly availabl
 
 These serve as the raw sources for dbt transformations. The Entity Relationship Diagram (ERD) for this dataset looks as follows (listing fewer columns for readability):
 
-![ERD Diagram](data/theLook_eCommerce_ERD_red.png)
+![ERD Diagram](data/erd/erd_red.png)
 
 ## Use Cases
 

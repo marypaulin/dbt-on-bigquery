@@ -1,0 +1,245 @@
+version: 2
+sources:
+- name: thelook
+  database: bigquery-public-data
+  schema: thelook_ecommerce
+  tables:
+  - name: distribution_centers
+    description: Warehouse locations (latitude, longitude) used for shipping
+    columns:
+    - name: id
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: name
+      description: ''
+    - name: latitude
+      description: ''
+    - name: longitude
+      description: ''
+    - name: distribution_center_geom
+      description: ''
+  - name: events
+    description: User web events (page visits, traffic source, browser, event type,
+      timestamps)
+    columns:
+    - name: id
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: user_id
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: sequence_number
+      description: ''
+    - name: session_id
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: created_at
+      description: ''
+    - name: ip_address
+      description: ''
+    - name: city
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: state
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: postal_code
+      description: ''
+    - name: browser
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: traffic_source
+      description: ''
+    - name: uri
+      description: ''
+    - name: event_type
+      description: ''
+  - name: inventory_items
+    description: Inventory-level details (cost, created_at, sold_at, product distribution
+      center)
+    columns:
+    - name: id
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: product_id
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: created_at
+      description: ''
+    - name: sold_at
+      description: ''
+    - name: cost
+      description: ''
+    - name: product_category
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: product_name
+      description: ''
+    - name: product_brand
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: product_retail_price
+      description: ''
+    - name: product_department
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: product_sku
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: product_distribution_center_id
+      description: ''
+      meta:
+        semantic_type: categorical
+  - name: order_items
+    description: Line-level order items, linking users, inventory, products; can derive
+      statuses/timestamps
+    columns:
+    - name: id
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: order_id
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: user_id
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: product_id
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: inventory_item_id
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: status
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: created_at
+      description: ''
+    - name: shipped_at
+      description: ''
+    - name: delivered_at
+      description: ''
+    - name: returned_at
+      description: ''
+    - name: sale_price
+      description: ''
+  - name: orders
+    description: High-level orders (status, timestamps, user linkage, item count)
+    columns:
+    - name: order_id
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: user_id
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: status
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: gender
+      description: ''
+    - name: created_at
+      description: ''
+    - name: returned_at
+      description: ''
+    - name: shipped_at
+      description: ''
+    - name: delivered_at
+      description: ''
+    - name: num_of_item
+      description: ''
+  - name: products
+    description: Master product catalog (brand, category, pricing, SKU, distribution
+      center)
+    columns:
+    - name: id
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: cost
+      description: ''
+    - name: category
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: name
+      description: ''
+    - name: brand
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: retail_price
+      description: ''
+    - name: department
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: sku
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: distribution_center_id
+      description: ''
+      meta:
+        semantic_type: categorical
+  - name: users
+    description: Synthetic user profiles (demographics, location, traffic source)
+    columns:
+    - name: id
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: first_name
+      description: ''
+    - name: last_name
+      description: ''
+    - name: email
+      description: ''
+    - name: age
+      description: ''
+    - name: gender
+      description: ''
+    - name: state
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: street_address
+      description: ''
+    - name: postal_code
+      description: ''
+    - name: city
+      description: ''
+      meta:
+        semantic_type: categorical
+    - name: country
+      description: ''
+    - name: latitude
+      description: ''
+    - name: longitude
+      description: ''
+    - name: traffic_source
+      description: ''
+    - name: created_at
+      description: ''
+    - name: user_geom
+      description: ''

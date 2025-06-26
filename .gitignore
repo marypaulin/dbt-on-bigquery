@@ -5,4 +5,4 @@ src/dbt_packages/
 src/logs/
 secrets/
 .env
-data/theLook/
+data/raw/

@@ -1,39 +1,27 @@
+// DBML file to generate ERD on dbdiagram.io
+// Containing all tables and main columns for theLook database schema
+
 Table distribution_centers {
   id int64 [pk]
   name string
-  latitude float64
-  longitude float64
   distribution_center_geom geography
 }
 
 Table events {
   id int64 [pk]
   user_id int64 [ref: > users.id]
-  sequence_number int64
   session_id string
   created_at timestamp
   ip_address string
-  city string
-  state string
-  postal_code string
   browser string
-  traffic_source string
-  uri string
-  event_type string
 }
 
 Table inventory_items {
   id int64 [pk]
   product_id int64 [ref: > products.id]
-  created_at timestamp
-  sold_at timestamp
   cost float64
   product_category string
   product_name string
-  product_brand string
-  product_retail_price float64
-  product_department string
-  product_sku string
   product_distribution_center_id int64 [ref: > distribution_centers.id]
 }
 
@@ -46,20 +34,14 @@ Table order_items {
   status string
   created_at timestamp
   shipped_at timestamp
-  delivered_at timestamp
-  returned_at timestamp
-  sale_price float64
 }
 
 Table orders {
   order_id int64 [pk]
   user_id int64 [ref: > users.id]
   status string
-  gender string
   created_at timestamp
-  returned_at timestamp
   shipped_at timestamp
-  delivered_at timestamp
   num_of_item int64
 }
 
@@ -68,10 +50,6 @@ Table products {
   cost float64
   category string
   name string
-  brand string
-  retail_price float64
-  department string
-  sku string
   distribution_center_id int64 [ref: > distribution_centers.id]
 }
 
@@ -83,13 +61,4 @@ Table users {
   age int64
   gender string
   state string
-  street_address string
-  postal_code string
-  city string
-  country string
-  latitude float64
-  longitude float64
-  traffic_source string
-  created_at timestamp
-  user_geom geography
 }

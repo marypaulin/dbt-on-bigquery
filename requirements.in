@@ -3,10 +3,12 @@ python-dotenv
 google-cloud-bigquery-storage
 pandas
 
-# Packages for EDA
+# Packages for EDA & documentation
 notebook
-matplotlib
+ydata_profiling
+ipywidgets
 seaborn
+pyyaml
 
 # Packages for modeling
 dbt-bigquery

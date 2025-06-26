@@ -12,7 +12,7 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S"
-    )
+)
 
 # Load environment variables
 load_dotenv()
@@ -23,9 +23,9 @@ if not DATASET_ID:
     logging.error("BIGQUERY_DATASET environment variable not set")
     exit(1)
 
-DATA_PATH = os.getenv("DATA_PATH")
-if not DATA_PATH:
-    logging.error("DATA_PATH environment variable not set")
+RAW_DATA_PATH = os.getenv("RAW_DATA_PATH")
+if not RAW_DATA_PATH:
+    logging.error("RAW_DATA_PATH environment variable not set")
     exit(1)
 
 # Create BigQuery client
@@ -45,7 +45,7 @@ try:
         # Download table to DataFrame
         df = client.list_rows(table).to_dataframe()
         # Save DataFrame to Parquet file
-        parquet_file = DATA_PATH + f"{table.table_id}.parquet"
+        parquet_file = RAW_DATA_PATH + f"{table.table_id}.parquet"
         df.to_parquet(parquet_file, index=False)
         logging.info("Saved %s (%i rows, %.2f MB)", table.table_id, table.num_rows, mb_size)
 except Exception as e:
